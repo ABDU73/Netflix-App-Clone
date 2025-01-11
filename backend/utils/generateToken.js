@@ -18,7 +18,7 @@ export const generateTokenAndSetCookie = (userId, res) => {
     maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in milliseconds
     httpOnly: true, // prevent XSS (cross-site scripting attacks)
     sameSite: "strict", // prevent CSRF (cross-site request forgery attacks)
-    secure: ENV_VARS.NODE_ENV !== "development", // Only true in production
+    secure: ENV_VARS.NODE_ENV !== "production", // Only true in production
   });
 
   return token;
